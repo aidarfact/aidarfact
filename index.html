@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Интересные факты об Айдаре</title>
+</head>
+<body style="text-align: center;">
+	<h1>Интересный факт:</h1>
+	<h2 id="fact"></h2>
+	<script type="text/javascript">
+		var facts = [
+				"Однажды Айдар работал в отеле.",
+				"Однажды Айдар обиделся, когда у него по приколу забрали телефон и не отдавали.",
+				"Однажды Айдар заплатил 387 рублей за такси.",
+				"Однажды Айдар отмечал свой 23-й день рождения на корабле."
+			];
+		var randomNumber = Math.floor(Math.random()*facts.length);
+        document.getElementById("fact").innerHTML=facts[randomNumber];
+    </script>
+</body>
+</html>
