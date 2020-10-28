@@ -6,15 +6,45 @@
 <body style="text-align: center;">
 	<h1>Интересный факт:</h1>
 	<h2 id="fact"></h2>
+	<div style="clear: both">
+		<h2 id="trueButton" onclick="checkTrue()">Правда</h2>
+		<h2 id="falseButton" onclick="checkFalse()">Ложь</h2>
+	</div>
 	<script type="text/javascript">
 		var facts = [
-				"Однажды Айдар работал в отеле.",
-				"Однажды Айдар обиделся, когда у него по приколу забрали телефон и не отдавали.",
-				"Однажды Айдар заплатил 387 рублей за такси.",
-				"Однажды Айдар отмечал свой 23-й день рождения на корабле."
+				{ fact: "Однажды Айдар работал в отеле.", status: true },
+				{ fact: "Однажды Айдар обиделся, когда у него по приколу забрали телефон и не отдавали.", status: true },
+				{ fact: "Однажды Айдар заплатил 387 рублей за такси.", status: true },
+				{ fact: "Однажды Айдар отмечал свой 23-й день рождения на корабле.", status: true },
+				{ fact: "Оданжды Айдар взял чемпионский пояс из картона по коммпютерной игре \"UFC-3\"", status: true },
+			    { fact: "Однажды Айдар водил по своему лицу перышком, которое участвовало в интимном процессе его друзей", status: true },
+			    { fact: "Однажды Айдар ходил на городскую школьную олимпиаду по истории", status: true },
+			    { fact: "Однажды Айдар встретил Хадиса", status: true },
+			    { fact: "Однажды Айдару не открыли дверь в его день рождения", status: true },
+			    { fact: "Однажды Айдару сказали что у него маленькие ушки", status: true },
+			    { fact: "Оданжды Айдар снялся в рекламе", status: false },
+			    { fact: "Оданжды Айдар обманул подруг, выдав пшеничную муку за кокос", status: true },
+			    { fact: "Оданжды Айдар пришел босиком домой с карьеров", status: false },
+			    { fact: "Оданжды Айдар сломал зуб об курай", status: false },
+
 			];
 		var randomNumber = Math.floor(Math.random()*facts.length);
-        document.getElementById("fact").innerHTML=facts[randomNumber];
+        document.getElementById("fact").innerHTML=facts[randomNumber].fact;
+
+        function checkTrue() {
+        	if (facts[randomNumber].status === true) {
+        		if(!alert("Это правда")){window.location.reload();}
+        	} else {
+        		if(!alert("Ошибка, на самом деле это неправда")){window.location.reload();}
+        	}
+        }
+        function checkFalse() {
+        	if (facts[randomNumber].status === false) {
+        		if(!alert("Правильно, это ложь!")){window.location.reload();}
+        	} else {
+        		if(!alert("Ошибка, это правдивый факт про Айдара")){window.location.reload();}
+        	}
+        }
     </script>
 </body>
 </html>
