@@ -7,8 +7,10 @@
 	<h1>Интересный факт:</h1>
 	<h2 id="fact"></h2>
 	<div class="buttons">
-		<h2 id="trueButton" onclick="checkTrue()">Правда</h2>
 		<h2 id="falseButton" onclick="checkFalse()">Ложь</h2>
+		<h2 id="skipButton" onclick="skip()">Не знаю</h2>
+		<h2 id="trueButton" onclick="checkTrue()">Правда</h2>
+
 	</div>
 	<div>
 		<h3>Счет:</h3>
@@ -33,33 +35,52 @@
 
 			];
 
-		if (localStorage.getItem("score") === null) {
+		if (localStorage.getItem("score") === null)
 			localStorage.setItem("score", 0);
-		}
+
+		if (localStorage.getItem("scoreColor") === null)
+			localStorage.setItem("scoreColor", "black");
+
 		var score = localStorage.getItem("score");
 
 		var randomNumber = Math.floor(Math.random()*facts.length);
         document.getElementById("fact").innerHTML=facts[randomNumber].fact;
+        
         document.getElementById("score").innerHTML=score;
+        document.getElementById("score").style.color = localStorage.getItem("scoreColor");
 
         function checkTrue() {
-        	if (facts[randomNumber].status === true) {
-        		if(!alert("Это правда")){window.location.reload();}
-        		score++;
-        	} else {
-        		if(!alert("Ошибка, на самом деле это неправда")){window.location.reload();}
-        		score--;
-        	}
+        	if (facts[randomNumber].status === true)
+        		rigth();
+        	else
+        		miss();
+        	
+        	window.location.reload();
+        }
+
+        function checkFalse() {
+        	if (facts[randomNumber].status === false)
+        		rigth();
+        	else
+        		miss();
+
+        	window.location.reload();
+        }
+
+        function skip() {
+			localStorage.setItem("scoreColor", "black");
+        	window.location.reload();
+        }
+
+        function rigth() {
+			localStorage.setItem("scoreColor", "green");
+        	score++;
         	localStorage.setItem("score", score);
         }
-        function checkFalse() {
-        	if (facts[randomNumber].status === false) {
-        		if(!alert("Правильно, это ложь!")){window.location.reload();}
-        		score++;
-        	} else {
-        		if(!alert("Ошибка, это правдивый факт про Айдара")){window.location.reload();}
-        		score--;
-        	}
+
+        function miss() {
+			localStorage.setItem("scoreColor", "red");
+        	score--;
         	localStorage.setItem("score", score);
         }
     </script>
