@@ -6,9 +6,13 @@
 <body style="text-align: center;">
 	<h1>Интересный факт:</h1>
 	<h2 id="fact"></h2>
-	<div style="clear: both">
+	<div class="buttons">
 		<h2 id="trueButton" onclick="checkTrue()">Правда</h2>
 		<h2 id="falseButton" onclick="checkFalse()">Ложь</h2>
+	</div>
+	<div>
+		<h3>Счет:</h3>
+		<h3 id="score"></h3>
 	</div>
 	<script type="text/javascript">
 		var facts = [
@@ -28,22 +32,35 @@
 			    { fact: "Оданжды Айдар сломал зуб об курай", status: false },
 
 			];
+
+		if (localStorage.getItem("score") === null) {
+			localStorage.setItem("score", 0);
+		}
+		var score = localStorage.getItem("score");
+
 		var randomNumber = Math.floor(Math.random()*facts.length);
         document.getElementById("fact").innerHTML=facts[randomNumber].fact;
+        document.getElementById("score").innerHTML=score;
 
         function checkTrue() {
         	if (facts[randomNumber].status === true) {
         		if(!alert("Это правда")){window.location.reload();}
+        		score++;
         	} else {
         		if(!alert("Ошибка, на самом деле это неправда")){window.location.reload();}
+        		score--;
         	}
+        	localStorage.setItem("score", score);
         }
         function checkFalse() {
         	if (facts[randomNumber].status === false) {
         		if(!alert("Правильно, это ложь!")){window.location.reload();}
+        		score++;
         	} else {
         		if(!alert("Ошибка, это правдивый факт про Айдара")){window.location.reload();}
+        		score--;
         	}
+        	localStorage.setItem("score", score);
         }
     </script>
 </body>
