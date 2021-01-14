@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Интересные факты об Айдаре</title>
 </head>
 <body style="text-align: center;">
@@ -17,62 +18,28 @@
 		<h3 id="score"></h3>
 	</div>
 	<script type="text/javascript">
-		var facts = [
-				{ fact: "Однажды Айдар работал в отеле.", status: true },
-				{ fact: "Однажды Айдар обиделся, когда у него по приколу забрали телефон и не отдавали.", status: true },
-				{ fact: "Однажды Айдар заплатил 387 рублей за такси.", status: true },
-				{ fact: "Однажды Айдар отмечал свой 23-й день рождения на корабле.", status: true },
-				{ fact: "Оданжды Айдар взял чемпионский пояс из картона по коммпютерной игре \"UFC-3\"", status: true },
-			    	{ fact: "Однажды Айдар водил по своему лицу перышком, которое участвовало в интимном процессе его друзей", status: true },
-			    	{ fact: "Однажды Айдар ходил на городскую школьную олимпиаду по истории", status: true },
-			    	{ fact: "Однажды Айдар встретил Хадиса", status: true },
-			    	{ fact: "Однажды Айдару не открыли дверь в его день рождения", status: true },
-			    	{ fact: "Однажды Айдару сказали что у него маленькие ушки", status: true },
-			    	{ fact: "Оданжды Айдар снялся в рекламе", status: false },
-			    	{ fact: "Оданжды Айдар обманул подруг, выдав пшеничную муку за кокос", status: true },
-			    	{ fact: "Оданжды Айдар пришел босиком домой с карьеров", status: false },
-			    	{ fact: "Оданжды Айдар внезапно заблевал лотерейный киосок", status: true },
-				{ fact: "Оданжды Айдар покушал Кумпане, заведение находящиеся в Республике Башкортостан в г.Уфа,и советовал там всем кушать на протяжении 6 месяцев", status: true },
-				{ fact: "Оданжды Айдар обиделся на друга (Игната) и пошел в другую сторону", status: true },
-				{ fact: "Оданжды Айдар обоссал ободок унитаза у друга (Рамиса) дома и друг (Рамис) его спалил", status: true },
-				{ fact: "Однажды Айдар жил как Гарри Поттер, с решеткой за окном (АУЕ)", status: true},
-				{ fact: "Однажды Айдар не заплатил за такси. Просто сделал вид, что разговаривает по телефону, вышел из машины и ушел прочь", status: false },
-				{ fact: "Однажды Айдар занимался танцами", status: true },
-				{ fact: "Однажды Айдар признавался в любви однакласснице (Наиле) около столба возле общежития где тридцать девятка", status: true },
-				{ fact: "Однажды Айдар на уроке ИЗО срисовал рисунок у однаклассника (Альберта Каримова), хотя он его просил не срисовывать", status: true },
-				{ fact: "Однаджы Айдар в детском лагере в школе получил от пацана с параллельного класса (Ильи) игрушку: Повер Рейнджер", status: true },
-				{ fact: "Однажды Айдару не понравились мемы про него которые делал его друг (Рамис) и он это сопаставлял с тем ,что он копается в чужом белье", status: true },
-				{ fact: "Однажды Айдар попросил друзей о нем не думать", status: true },
-				{ fact: "Однажды Айдар написал другу (Рамису) чтобы он перестал думать о нём", status: true },
-				{ fact: "Айдар пьёт только элитную воду (сан пелигрино, эвиан)", status: true },
-				{ fact: "Айдар закупается в доме ВЫСОКОЙ МОДЫ", status: true },
-				{ fact: "Однажды Айдар танцевал тиктоник новом году в школе", status: false },
-				{ fact: "Однажды Айдар попросил пару рублей у сотрудника столовой, чтобы купить еду в этой же столовой (школьной столовой)", status: false },
-				{ fact: "Однажды Айдар считал, что быть военным круто", status: true},
-				{ fact: "Однажды Айдар мастурбировал (Дзюбил) на уроке", status: false },
-				{ fact: "Айдар перестал расти в 12 лет", status: false },
-				{ fact: "Однажды Айдар прочел \"Войну и мир\" полностью за 100 дней", status: false },
-				{ fact: "Однажды Айдар уехал заграницу (Франкфурт, Германия) и потерял там загран паспорт", status: false },
-				{ fact: "Однажды Айдар подарил всем своим друзьям ремни Baldinini на Новый Год", status: true },
-				{ fact: "Однажды Айдар познакомился с американкой, переписывался с ней, но получилось как с другими девушками", status: true },
-				{ fact: "На самом деле Айдар на 7/4 молдован", status: false },
-				{ fact: "У Айдара большие титьки", status: false },
-				{ fact: "У Айдара дипломная работа на тему: \"Использование ЗРК в осложнённых условиях на примере 53ДЛ215\"", status: false },
-				{ fact: "Айдар танцевал тектоник", status: false },
-				{ fact: "Занимается отельным бизнесом", status: false },
-				{ fact: "В Айдарском доме высокой моды нет палёнки", status: false },
-				{ fact: "Айдар может покурить кальян и поиграть в плойку в однуху за 20 мин", status: true },
-				{ fact: "Айдар ест ооочень медленно", status: false },
-				{ fact: "Однажды в Айдара стреляли", status: false },
-				{ fact: "Однажды Айдар в графе ЗАГРАНПАСПОРТ написал НЕТУ (ясен хуй нету)", status: true },
-				{ fact: "Однажды Айдар описал свои внешние данные как: Телосложение Худощавое, Рост 175, Вес 65, Размер обуви 42, Размер одежды 46, Цвет кожи Белый, Длина волос Средние, Цвет волос Шатен, Тип лица Азиатский, Цвет глаз Карий, Тембр голоса Тенор, Татуировки Нету, Пирсинг Нету", status: true },
-				{ fact: "Однажды Айдару пукнули про мегапиксель", status: false },
-				{ fact: "Айдару на физре записали :чири ", status: true },
-				{ fact: "У Айдара нет военника", status: false },
-				{ fact: "Айдар покупал у Игната кимоно", status: true },
-				// Template
-				// { fact: "", status: true },
-			];
+
+		var getJSON = function(url, callback) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+			xhr.responseType = 'json';
+			xhr.onload = function() {
+				var status = xhr.status;
+				if (status === 200) {
+					callback(null, xhr.response);
+				} else {
+					callback(status, xhr.response);
+				}
+			};
+			xhr.send();
+		};
+		var factsJSON, factsArray, randomNumber, score;
+		getJSON('https://script.google.com/macros/s/AKfycbwEX_gGJSCl8WxqV8kXYW2WNMR_VFG6Y718W4Ak17G8bGY4smJvGc9MBw/exec',
+		function(err, data) {
+			factsJSON = data;
+			console.log(data);
+
+		factsArray = factsJSON.result;
 
 		if (localStorage.getItem("score") === null)
 			localStorage.setItem("score", 0);
@@ -80,16 +47,18 @@
 		if (localStorage.getItem("scoreColor") === null)
 			localStorage.setItem("scoreColor", "black");
 
-		var score = localStorage.getItem("score");
+		score = localStorage.getItem("score");
 
-		var randomNumber = Math.floor(Math.random()*facts.length);
-        document.getElementById("fact").innerHTML=facts[randomNumber].fact;
+		randomNumber = Math.floor(Math.random()*factsArray.length);
+        document.getElementById("fact").innerHTML=factsArray[randomNumber][1];
         
         document.getElementById("score").innerHTML=score;
         document.getElementById("score").style.color = localStorage.getItem("scoreColor");
 
+        });
+
         function checkTrue() {
-        	if (facts[randomNumber].status === true)
+        	if (factsArray[randomNumber][2] === true)
         		rigth();
         	else
         		miss();
@@ -98,7 +67,7 @@
         }
 
         function checkFalse() {
-        	if (facts[randomNumber].status === false)
+        	if (factsArray[randomNumber][2] === false)
         		rigth();
         	else
         		miss();
